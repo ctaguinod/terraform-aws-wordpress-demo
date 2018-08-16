@@ -2,7 +2,7 @@
 
 Provision Wordpress on AWS using Terraform.
 
-(Reference Architecture / Best Practices)[https://aws.amazon.com/blogs/architecture/wordpress-best-practices-on-aws/]
+[Reference Architecture / Best Practices](https://aws.amazon.com/blogs/architecture/wordpress-best-practices-on-aws/)
 
 ### Requirements:
 1. AWS Account.
@@ -19,23 +19,23 @@ Provision Wordpress on AWS using Terraform.
 6. `terraform destroy` - will destroy all resources, might need to manually delete s3 bucket if not empty.
 
 ### AWS Resources created:
-1 x VPC - https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/
-3 x Private Subnets
-3 x Public Subnets
-2 x Database Subnets
-1 x NAT Gateway
-1 x EFS file system (mounted on /var/www/html)
-3 x EFS mount target (1 per AZ)
-1 x RDS MySQL
-1 x ALB
-1 x ASG
-1 x Launch Configuration (AmazonLinux2 AMI)
-1 x EC2 Instance for bastion and Wordpress configuration (AmazonLinux2 AMI)
-1 x IAM role with access to S3 Bucket
-1 x CloudFront distribution
-1 x S3 Bucket for Wordpress static assets
-* Cron Job to sync /var/www/html/wp-content/uploads to S3 bucket
-* Rewrite rule to redirect ^wp-content/uploads/ to CloudFrontDistribution/wp-content/uploads/
+1 x VPC - https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/  
+3 x Private Subnets  
+3 x Public Subnets  
+2 x Database Subnets  
+1 x NAT Gateway  
+1 x EFS file system (mounted on /var/www/html)  
+3 x EFS mount target (1 per AZ)  
+1 x RDS MySQL  
+1 x ALB  
+1 x ASG  
+1 x Launch Configuration (AmazonLinux2 AMI)  
+1 x EC2 Instance for bastion and Wordpress configuration (AmazonLinux2 AMI)  
+1 x IAM role with access to S3 Bucket  
+1 x CloudFront distribution  
+1 x S3 Bucket for Wordpress static assets  
+* Cron Job to sync /var/www/html/wp-content/uploads to S3 bucket  
+* Rewrite rule to redirect ^wp-content/uploads/ to CloudFrontDistribution/wp-content/uploads/  
 
 ### Next steps:
 1. Create AMI from the EC2 instance configured.
