@@ -1,0 +1,22 @@
+# Rename this file to terraform.tfvars and replace the variables
+# Provider
+access_key = "YOUR_AWS_ACCESS_KEY"
+secret_key = "YOUR_AWS_SECRET_KEY"
+region = "us-east-1"
+# Tags
+owner = "your_name"
+env = "demo"
+app = "wordpress"
+# ASG
+asg_desired_capacity = "1"
+asg_max_size = "1"
+asg_min_size = "1"
+instance_type = "t2.micro"
+# Wordpress
+wp_title = "Hello Wordpress"
+wp_user = "your_wordpress_admin_user"
+wp_pass = "your_wordpress_pass"
+wp_email = "your@email.com"
+# VPC
+vpc_enable_nat_gateway = "true"
+vpc_single_nat_gateway = "true"
